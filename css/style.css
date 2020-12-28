@@ -20,6 +20,7 @@ body{
     height: 40px;
     border: 1px solid lightslategray;
     font-size: 18px;
+    border-radius: 10px;
 }
 /* .container-textinput:focus{
     border: 1px solid lightslategray;
@@ -28,4 +29,6 @@ body{
     background-color: var(--color-button);
     color: var(--text-color);
     padding: 10px;
+    border-color: transparent;
+    border-radius: 10px;
 }
