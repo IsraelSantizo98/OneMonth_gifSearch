@@ -27,6 +27,18 @@ document.querySelector('.js-userinput').addEventListener('keyup', function(){
     pushToDom(input);
 });
 */
+//Variable for link of giphy
+var url = "https://api.giphy.com/v1/gifs/search?api_key=Rhp6uPOa1OBOgfjv7Gl7neJ8gTH2BuSs&q=&limit=25&offset=0&rating=g&lang=en";
+//AJAX
+var GiphyAJAXCall = new XMLHttpRequest();
+GiphyAJAXCall.open('GET', url);
+GiphyAJAXCall.send();
+GiphyAJAXCall.addEventListener('load', function(e){
+    //console.log(e);
+    //response es cuando ya cargo la pagina
+    var data = e.target.response;
+    console.log(data);
+});
 function pushToDom(input){
     var container = document.querySelector('.js-container');
     container.innerHTML = input;
