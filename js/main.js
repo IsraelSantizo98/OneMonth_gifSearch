@@ -28,7 +28,7 @@ document.querySelector('.js-userinput').addEventListener('keyup', function(){
 });
 */
 //Variable for link of giphy
-var url = "https://api.giphy.com/v1/gifs/search?api_key=Rhp6uPOa1OBOgfjv7Gl7neJ8gTH2BuSs&q=&limit=25&offset=0&rating=g&lang=en";
+var url = "https://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=Rhp6uPOa1OBOgfjv7Gl7neJ8gTH2BuSs&q=&limit=25&offset=0&rating=g&lang=en";
 //AJAX
 var GiphyAJAXCall = new XMLHttpRequest();
 GiphyAJAXCall.open('GET', url);
@@ -38,8 +38,12 @@ GiphyAJAXCall.addEventListener('load', function(e){
     //response es cuando ya cargo la pagina
     var data = e.target.response;
     console.log(data);
+    pushToDom(data);
 });
 function pushToDom(input){
+    var response = JSON.parse(input);
+    var imageUrl = response.data[0].images.fixed_height.url;
+    console.log(imageUrl);
     var container = document.querySelector('.js-container');
-    container.innerHTML = input;
+    container.innerHTML = imageUrl;
 };
