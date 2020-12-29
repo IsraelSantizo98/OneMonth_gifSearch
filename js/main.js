@@ -42,8 +42,8 @@ GiphyAJAXCall.addEventListener('load', function(e){
 });
 function pushToDom(input){
     var response = JSON.parse(input);
-    var imageUrl = response.data[0].images.fixed_height.url;
+    var imageUrl = response.data[2].images.fixed_height.url;
     console.log(imageUrl);
     var container = document.querySelector('.js-container');
-    container.innerHTML = imageUrl;
+    container.innerHTML = "<img src=\"" + imageUrl + "\">";
 };
